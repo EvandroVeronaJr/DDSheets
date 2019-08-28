@@ -4,25 +4,15 @@
  * and open the template in the editor.
  */
 package calculadora;
-import java.util.List;
-
-
 
 /**
  *
  * @author Evandro Jr
  */
-public class MainCl {
 
-    /**
-     * @param args the command line arguments
-     */
-    
-    
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-        
-    }
-    
+
+public class Pericias {
+    tipeSt BaseStatus;
+    boolean proeficiencia;
+    int base;
 }

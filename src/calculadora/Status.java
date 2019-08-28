@@ -14,11 +14,14 @@ enum tipeSt{Forca, Destreza, Constituicao, Inteligencia, Sabedoria, Carisma}
 public class Status {
      int InitialStatus, FinalStatus, modifierBase, modifeirFinal;
      public tipeSt Special;
+     boolean proeficiente;
      
      public Status(tipeSt ThisSpecial){
          ThisSpecial = Special;
      }
-     
+     public void SetProeficiencia(boolean a){
+         proeficiente = a;
+     }
      public void attStatus(int status){
          InitialStatus = status;  
          modifierBase = (InitialStatus -10) /2;
