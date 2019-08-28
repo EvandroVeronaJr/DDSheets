@@ -15,4 +15,9 @@ public class Pericias {
     tipeSt BaseStatus;
     boolean proeficiencia;
     int base;
+    
+    public Pericias(tipeSt base){
+        BaseStatus = base;
+    }
+    
 }
