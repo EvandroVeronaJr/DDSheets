@@ -14,10 +14,15 @@ package calculadora;
 public class Pericias {
     tipeSt BaseStatus;
     boolean proeficiencia;
-    int base;
+    public int base;
     
     public Pericias(tipeSt base){
         BaseStatus = base;
+        for(Status Esp:Personagem.Special ){
+            if(BaseStatus == Esp.Special){
+            this.base = Esp.GetModifeirFinal();
+            }
+        }
     }
     
 }

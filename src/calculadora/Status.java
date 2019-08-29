@@ -12,7 +12,7 @@ package calculadora;
 
 enum tipeSt{Forca, Destreza, Constituicao, Inteligencia, Sabedoria, Carisma}
 public class Status {
-     int InitialStatus, FinalStatus, modifierBase, modifeirFinal;
+     int InitialStatus, FinalStatus, modifierBase, modifeirFinal, somaEquip;
      public tipeSt Special;
      boolean proeficiente;
      
@@ -30,6 +30,10 @@ public class Status {
          InitialStatus += status;  
          modifierBase = (InitialStatus -10) /2;
     }
+     
+     public int GetModifeirFinal(){
+         return modifeirFinal;
+     }
      
      public void finalStatus(){//atualzar os valores com base em itens e afins
          
