@@ -12,9 +12,11 @@ package calculadora;
  */
 public class MainCl {
     
+    
+    
     public static void main(String[] args) {
         // TODO code application logic here
-        
+       InterFace Ficha = new InterFace();
     }
     
 }
