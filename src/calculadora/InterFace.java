@@ -7,6 +7,7 @@
 package calculadora;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*; 
 
 /**
  * https://respostas.guj.com.br/5924-jpanel-o-que-e-codigos-e-como-funciona
@@ -16,10 +17,10 @@ import java.awt.*;
  * https://github.com/EvandroVeronaJr
  * @author Evandro Jr
  */
-public class InterFace {
+public class InterFace implements  ActionListener{
     
     JFrame JF;
-    JPanel JP;
+    JPanel JPCabeca, JPButtons;
     JButton JBsetCha;
     JLabel JL;
     
@@ -34,21 +35,34 @@ public class InterFace {
         JF.setSize(600,400);
         JF.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        JP =new JPanel();
-        JP.setBackground(Color.RED);
+        JPCabeca =new JPanel();
+        JPCabeca.setBackground(Color.RED);
+        JPButtons = new JPanel();
+        
         
         JBsetCha = new JButton("Set Character");
+        JBsetCha.addActionListener(this);
         JL = new JLabel("test");
         
-        JP.add(JBsetCha);
-        JP.add(JL);
+        JPCabeca.add(JL);
+        JPButtons.add(JBsetCha);
         
-        JF.add(JP,BorderLayout.CENTER);
+        JF.add(JPCabeca,BorderLayout.NORTH);
+        JF.add(JPButtons);
+        
 
     }
     
     public void SetNewName(String nname){
         JF.setName(nname);
     }
+    
+    public void actionPerformed(ActionEvent e){  
+        if(e.getSource() == JBsetCha){
+        System.out.println("acetou da onde vem");
+        }else{
+            System.out.println("errou");
+        }
+    }  
     
 }
