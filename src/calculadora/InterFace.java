@@ -11,7 +11,7 @@ import java.awt.event.*;
 
 /**
  * https://respostas.guj.com.br/5924-jpanel-o-que-e-codigos-e-como-funciona
- * http://www.macs.hw.ac.uk/cs/java-swing CreatePanelsdebook/?name=JPanel&page=1
+ * http://www.macs.hw.ac.uk/cs/java-swing-guidebook/?name=JPanel&page=1
  * https://youtu.be/eeE44RmE1FM?t=193
  * any doubt at verona.junior@gmail.com
  * https://github.com/EvandroVeronaJr
@@ -20,8 +20,7 @@ import java.awt.event.*;
 public class InterFace implements  ActionListener{
     
     JFrame JF;
-    JPanel JPCabeca;
-    JLabel JL;
+    
     
     public InterFace(){
         
@@ -30,19 +29,15 @@ public class InterFace implements  ActionListener{
         JF.setVisible(true);
         JF.setSize(600,400);
         JF.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        CreatePanels();
+        CreateCabecario();
+        test();
+        SwingUtilities.updateComponentTreeUI(JF);
     }
     
     JPanel JPButtons,JPButtons1;
     JButton JBsetCha, JBchange1,JBchange2;
     
-    
-    private void CreatePanels(){
-        
-        
-        
-        JPCabeca =new JPanel();
-        JPCabeca.setBackground(Color.RED);
+    void test(){
         JPButtons = new JPanel();
         JPButtons1 = new JPanel();
         
@@ -60,18 +55,36 @@ public class InterFace implements  ActionListener{
         JBchange2 = new JButton("troca TEla 2");
         JBchange2.addActionListener(this);
         
-        JL = new JLabel("test");
         
-        JPCabeca.add(JL);
         JPButtons.add(JBsetCha);
         JPButtons.add(JBchange1);
         JPButtons1.add(JBchange2);
         
         
         
-        JF.add(JPCabeca,BorderLayout.NORTH);
         JF.add(JPButtons);
+    }
+    
+    JPanel JPCabeca, JBntList;
+    JTextField JTxName;
+    JButton JBChacWin,JBEquiWin,JBSpellWin;
+    
+    
+    private void CreateCabecario(){      
         
+        JPCabeca =new JPanel();
+        JPCabeca.setBackground(Color.RED);
+        JBntList = new JPanel();
+        
+        JTxName = new JTextField("nome do personagem");
+        
+        JBntList.add(JTxName);
+        
+        JPCabeca.add(JTxName,BorderLayout.WEST);
+        JPCabeca.add(JBntList,BorderLayout.EAST);
+        
+        JF.add(JPCabeca,BorderLayout.NORTH);
+
 
     }
     

@@ -16,13 +16,13 @@ import java.util.ArrayList;
 public class Personagem {
     static String Name;
     
-    static List<Status> Special= new ArrayList<>();
-    static Status Forca = new Status(tipeSt.Forca);
-    static Status Destreza = new Status(tipeSt.Destreza);
-    static Status Const = new Status(tipeSt.Constituicao);
-    static Status Inteli = new Status(tipeSt.Inteligencia);
-    static Status Sabedo =new Status (tipeSt.Sabedoria);
-    static Status Carist = new Status (tipeSt.Carisma);
+    public static List<Status> Special= new ArrayList<>();
+    public static Status Forca = new Status(tipeSt.Forca);
+    public static Status Destreza = new Status(tipeSt.Destreza);
+    public static Status Const = new Status(tipeSt.Constituicao);
+    public static Status Inteli = new Status(tipeSt.Inteligencia);
+    public static Status Sabedo =new Status (tipeSt.Sabedoria);
+    public static Status Carist = new Status (tipeSt.Carisma);
 
     
     static void SetStart(){
