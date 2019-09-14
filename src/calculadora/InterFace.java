@@ -17,6 +17,7 @@ import java.awt.event.*;
  * https://github.com/EvandroVeronaJr
  * @author Evandro Jr
  */
+
 public class InterFace implements  ActionListener{
     
     JFrame JF;
@@ -78,7 +79,17 @@ public class InterFace implements  ActionListener{
         
         JTxName = new JTextField("nome do personagem");
         
-        JBntList.add(JTxName);
+        JBChacWin = new JButton("Character");
+        JBChacWin.addActionListener(this);
+        JBEquiWin = new JButton("Equipment");
+        JBEquiWin.addActionListener(this);
+        JBSpellWin = new JButton("Spells");
+        JBSpellWin.addActionListener(this);
+        
+        JBntList.add(JBChacWin);
+        JBntList.add(JBEquiWin);
+        JBntList.add(JBSpellWin);
+        
         
         JPCabeca.add(JTxName,BorderLayout.WEST);
         JPCabeca.add(JBntList,BorderLayout.EAST);
@@ -87,9 +98,9 @@ public class InterFace implements  ActionListener{
 
 
     }
-    
+    JPanel JPCharacter;
     void CreateChrStatusPanel(){// "special" a proficiência pericia, HPmax HPtemp bonusHP PersepPassiva(é  10+percepção) InvestPassiva (10+investigação)
-        
+        JPCharacter = new JPanel();
     }
     void CreateChrEquipsPanel(){// Nome dos Itens se estão equipados, o modificador e oq eles modificão, preço em  PO
         
