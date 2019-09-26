@@ -10,9 +10,7 @@ package calculadora;
  *
  * @author Evandro Jr
  */
-public class MainCl {
-    
-    
+public class MainCl {   
     
     public static void main(String[] args) {
         // TODO code application logic here

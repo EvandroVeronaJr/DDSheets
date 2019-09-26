@@ -30,7 +30,7 @@ public class InterFace implements  ActionListener{
         JF.setVisible(true);
         JF.setSize(600,400);
         JF.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        CreateCabecario();
+        CreatePanels();
         test();
         SwingUtilities.updateComponentTreeUI(JF);
     }
@@ -69,9 +69,10 @@ public class InterFace implements  ActionListener{
     JPanel JPCabeca, JBntList;
     JTextField JTxName;
     JButton JBChacWin,JBEquiWin,JBSpellWin;
+    JPanel JPCharacter,JPEquips,JPSpells;
+
     
-    
-    private void CreateCabecario(){      
+    private void CreatePanels(){ //     
         
         JPCabeca =new JPanel();
         JPCabeca.setBackground(Color.RED);
@@ -95,19 +96,20 @@ public class InterFace implements  ActionListener{
         JPCabeca.add(JBntList,BorderLayout.EAST);
         
         JF.add(JPCabeca,BorderLayout.NORTH);
-
-
-    }
-    JPanel JPCharacter;
-    void CreateChrStatusPanel(){// "special" a proficiência pericia, HPmax HPtemp bonusHP PersepPassiva(é  10+percepção) InvestPassiva (10+investigação)
+        
+        // "special" a proficiência pericia, HPmax HPtemp bonusHP PersepPassiva(é  10+percepção) InvestPassiva (10+investigação)
         JPCharacter = new JPanel();
-    }
-    void CreateChrEquipsPanel(){// Nome dos Itens se estão equipados, o modificador e oq eles modificão, preço em  PO
+        JPCharacter.setBackground(Color.lightGray);
         
-    }
-    void CreateChrSpellPanel(){// dividido em 9 niveis + truques, quantas magias diarias maxima e disponiveis, efeito/descrição 
+        // "special" a proficiência pericia, HPmax HPtemp bonusHP PersepPassiva(é  10+percepção) InvestPassiva (10+investigação)
+        JPEquips = new JPanel();
+        JPEquips.setBackground(Color.BLUE);
         
-    }
+        // dividido em 9 niveis + truques, quantas magias diarias maxima e disponiveis, efeito/descrição 
+        JPSpells = new JPanel();
+        JPSpells.setBackground(Color.GREEN);
+    }   
+    
     public void SetNewName(String nname){
         JF.setName(nname);
     }
@@ -119,17 +121,35 @@ public class InterFace implements  ActionListener{
             JF.remove(JPButtons);
             JF.add(JPButtons1); 
             //JF.getContentPane().add(JPButtons1);
-            SwingUtilities.updateComponentTreeUI(JF);
         }else if(e.getSource() == JBchange2){
             JF.remove(JPButtons1);
             //JF.getContentPane().add(JPButtons);
             JF.add(JPButtons);
-            SwingUtilities.updateComponentTreeUI(JF);
+        }else if(e.getSource() == JBChacWin){
+            JF.remove(JPButtons1);
+            JF.remove(JPButtons);
+            JF.remove(JPEquips);
+            JF.remove(JPSpells);            
+            JF.add(JPCharacter);
+        }else if(e.getSource() == JBEquiWin){
+            JF.remove(JPButtons1);
+            JF.remove(JPButtons);
+            JF.remove(JPCharacter);
+            JF.remove(JPSpells);            
+            JF.add(JPEquips);
+        }else if(e.getSource() == JBSpellWin){
+            JF.remove(JPButtons1);
+            JF.remove(JPButtons);
+            JF.remove(JPEquips);
+            JF.remove(JPCharacter);            
+            JF.add(JPSpells);
         }
         else{
             System.out.println("errou");
         }
         
+        SwingUtilities.updateComponentTreeUI(JF);
+
     }  
     
 }

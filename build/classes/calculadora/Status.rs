@@ -1,2 +1,0 @@
-calculadora.Status
-calculadora.tipeSt

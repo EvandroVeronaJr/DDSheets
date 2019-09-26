@@ -10,7 +10,7 @@ package calculadora;
  * @author Evandro Jr
  */
 
-enum tipeSt{Forca, Destreza, Constituicao, Inteligencia, Sabedoria, Carisma}
+enum tipeSt{Forca, Destreza, Constituicao, Inteligencia, Sabedoria, Carisma,Non}
 public class Status {
      int InitialStatus, FinalStatus, modifierBase, modifeirFinal, somaEquip;
      public tipeSt Special;

@@ -25,4 +25,11 @@ public class Pericias {
         }
     }
     
+    public void Recall(){
+        for(Status Esp:Personagem.Special ){
+            if(BaseStatus == Esp.Special){
+            this.base = Esp.GetModifeirFinal();
+            }
+        }
+    }
 }
