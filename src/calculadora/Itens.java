@@ -14,8 +14,25 @@ package calculadora;
 enum tipeEquip{ HeadEquip, ArmorEquip, RingEquip, LeftHand, RightHand, BothHands, CapEquip, NonEquipable}
 public class Itens {
     public String Nome, Descricao;
-    public tipeSt Modificador;
-    tipeEquip Tipo;
+    public tipeSt Modificador = tipeSt.Non;
+    tipeEquip Tipo = tipeEquip.NonEquipable;
     public int Modifica;
-    public float PricePO;
+    public float PricePO, Peso;
+    public boolean Equipavel;
+    public Itens(String Name,String Desc,float Price, float Pezo){
+        Nome = Name;
+        Descricao = Desc;
+        PricePO = Price;
+        Peso = Pezo;
+    }
+    public Itens(String Name,String Desc,float Price, float Pezo, tipeSt modi, int Modifi,tipeEquip Whatis){
+        Nome = Name;
+        Descricao = Desc;
+        PricePO = Price;
+        Peso = Pezo;
+        Modificador = modi;
+        Modifica = Modifi;
+        Tipo = Whatis;
+    }
+    
 }
