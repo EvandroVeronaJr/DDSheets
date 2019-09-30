@@ -18,12 +18,21 @@ public class Inventory {
     public static List<Itens> ItensList = new ArrayList<>(); 
     static float PC;
     
-    public void NewItens(){
-        
+    public void NewItens(String Name,String Desc,float Price, float Pezo){
+        ItensList.add(new Itens( Name, Desc, Price,  Pezo));
     }
     
-    public void RemoveIten(){
-        
+    public void NewItens(String Name,String Desc,float Price, float Pezo, tipeSt modi, int Modifi,tipeEquip Whatis){
+        ItensList.add(new Itens( Name, Desc, Price,  Pezo,  modi,  Modifi, Whatis));
+    }
+    
+    public void RemoveIten(String Name){
+        for(int i = 0; i<ItensList.size();i++){
+            if(ItensList.get(i).Nome == Name){
+                ItensList.remove(i);
+                break;
+            }
+        }
     }
     
     public Itens GetItem(String Name){
