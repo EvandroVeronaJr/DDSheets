@@ -16,6 +16,7 @@ public class Status {
      public tipeSt Special;
      boolean proeficiente;
      
+     
      public Status(tipeSt ThisSpecial){
          ThisSpecial = Special;
      }
